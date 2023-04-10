@@ -119,5 +119,6 @@ Look-ahead method is defined in positive and a negative method. A positive look-
 Look-behind method is also defined in a positive and a negative method. Look-behind method works backwards to the look-away method, so simply a positive look-behind method defines a pattern that is behind something else and negative look-behind defines a pattern that is not behind something else.
 
 ## Author
+Name: Brooklynn Stevenson
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+GitHub: <a href=https://github.com/Brooksteven target=_blank>https://github.com/Brooksteven</a>
