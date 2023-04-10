@@ -60,6 +60,19 @@ In this Regex, the charactor class `/d` is used which in Javasctipt classifies t
 /^`([a-z0-9_\.-]+)`@`([\da-z\.-]+)`\.`([a-z\.]{2,6})`$/ <br>
 There are 3 groups being captured in this example. The charactor class `/d` in 1st Group is the username of the email account `[A-Za-z0-9_\.-]` ~ "McNoor2022". The 2nd group captures the domain name or e-mail service being used `[\da-z\.-]` ~"@.gmail" Lastly, the 3rd group captures the domain extention (i.e .com or .net and .usabcd) `[a-z\.]{2,6}`
 
+### Bracket Expressions
+/^(`[a-z0-9_\.-]`+)@(`[\da-z\.-]`+)\.(`[a-z\.]`{2,6})$/
+Similar to groups in this example, there are also 3 bracket expressions. The information in the bracket expressions is opened and closed between brackets like this `[]`. This indentifies which information is allowed to be matched.
+
+For example 	`[Me]`+`[eE]` matches `me`, `mE`, `Me`, and `ME`.
+`gr[ae]y` matches both spellings of the word `'grey'`; that is, `gray` and `grey`.
+
+Bracket Expression first: `[A-Za-z0-9_\.-]` - includes non-case sensitive characters from a-z, numbers from 0-9 an underscore, periods and hyphens.
+
+Bracket Expression second: `[\da-z\.-]`   - includes all digits, case sensitive characters from a-z, periods and hyphens
+
+Bracket Expression third: `[a-z\.]`      - includes case sensitive characters from a-z and periods.
+
 ## Author
 
 A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
