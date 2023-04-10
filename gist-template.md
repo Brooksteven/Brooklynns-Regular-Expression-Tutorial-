@@ -39,6 +39,18 @@ A start of a new line of string would be marked by `^` and ended with a `$`
 
 
 ### Quantifiers
+/`^`([a-z0-9_\.-]`+`)@([\da-z\.-]`+`)\.([a-z\.]{2,6})`$`/  <br>
+ - `*`   representing `0` or more occurrences of the atom,
+ - `+`   representing `1` or more occurrence of the atom,
+ - `?`   representing `0` or `1` occurrences of the atom,
+ - the bound `{n}`   representing exactly n occurrences of the atom,
+ - the bound `{m,n}`   representing between m and n occurrences of the atom.
+
+When we used `+` to communicate there should be another sequence to be matched as a greedy quantifier.  Example `{n,m}` or `{3,9}` as another greedy quantifer to specify the input should be a minimum of `2` characrtors to a maximum of `9` characters.
+
+This regex uses two different types of quantifiers. The first can be found in two places
+`([a-z0-9_\.-]+)`
+`([a-z\.]{2,6})`
 
 ### Grouping Constructs
 
