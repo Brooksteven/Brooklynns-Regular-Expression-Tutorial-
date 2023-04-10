@@ -10,10 +10,15 @@ This is the regex code that we will be anaylizing today is: `/^([a-z0-9_\.-]+)@(
 
 - [Anchors](#anchors) `^` `$`
 - [Quantifiers](#quantifiers) `+` `{}`
+- [OR Operator](#or-operator)
 - [Character Classes](#character-classes)`[a-z\d]`
+- [Flags](#flags)
 - [Grouping and Capturing](#grouping-and-capturing) `([a-z0-9_.-]+)`
 - [Bracket Expressions](#bracket-expressions) `[]`
 - [Greedy and Lazy Match](#greedy-and-lazy-match)
+- [Boundaries](#boundaries)
+- [Back-references](#back-references)
+- [Look-ahead and Look-behind](#look-ahead-and-look-behind)
 
 
 ## Regex Components
@@ -52,9 +57,24 @@ This regex uses two different types of quantifiers. The first can be found in tw
 `([a-z0-9_\.-]+)`
 `([a-z\.]{2,6})`
 
+### OR Operator
+An OR operator is an indicator that splits characters which allows that the character could match one or the other. 
+For example,
+`a|b|c`  
+in this expression, the matching character could be a, b, or c. Unfortunately, our email format expression does not contain an OR operators, but keep in mind that this operator is a great example to limit our matches to a much detailed amount, such as changing our expression to match only `.com` or `.org`. 
+
 ### Character Classes
 /^([a-z0-9_\`.`-]+)@([`\d`a-z\`.`-]`+`)\.(`[a-z\`.`]`{2,6})$/  <br>
 In this Regex, the charactor class `/d` is used which in Javasctipt classifies the use of any digit from `0` to `9`.
+
+### Flags
+
+Flags are optional components placed after a regex expression to further strict a search. Our email expression does not use a flag but here are some common examples of a flag,
+- `g` - A global search that tests against all possible matches in the string.
+- `i` - A case-insensitive search which ignores case-sensitivity while it tests for a match.
+- `m` - A multi-line search where the input string is treated as multi-lines.
+
+These flags would be more commonly used in a document or a string containing a large pool of information, rather than an email.
 
 ### Grouping and Capturing
 /^`([a-z0-9_\.-]+)`@`([\da-z\.-]+)`\.`([a-z\.]{2,6})`$/ <br>
@@ -76,6 +96,27 @@ Bracket Expression third: `[a-z\.]`      - includes case sensitive characters fr
 ### Greedy and Lazy Match
 /^(`[a-z0-9_\.-]`+)@(`[\da-z\.-]`+)\.(`[a-z\.]`{2,6})$/  <br>
 Here, we have only used greedy quantifiers `+` and `{}`, meaning that it will allow the match to expand as long as it neess to go. If these quantifiers were non-greedy quantifiers, they would appear as `+?` or `{}?`, this will direct the system to make the shortest match.
+
+### Boundaries
+Boundaries is an advance regex category where the meta-character `\b` acts as an anchor just as a `^` or `$`
+The meta-character `\b` simply indicates and allows a search for a whole word. For example,
+
+`\bEmail\b` will indicate a whole word search for `Email`.
+
+### Back-references
+Back-reference match is matching the same text previously matched by a capturing group. 
+By adding a `\1` at the end of the expression captures one group, and whatever is placed within the expression previously, will be repeated for a search.
+
+For example, 
+
+`([a-c])x\1x\1`
+
+will capture `axaxa` or `bxbxb` or `cxcxc`.
+
+### Look-ahead and Look-behind
+Look-ahead method is defined in positive and a negative method. A positive look-ahead defines a pattern that is followed by something else and a negative look-ahead defines a pattern that is not followed by something.
+
+Look-behind method is also defined in a positive and a negative method. Look-behind method works backwards to the look-away method, so simply a positive look-behind method defines a pattern that is behind something else and negative look-behind defines a pattern that is not behind something else.
 
 ## Author
 
