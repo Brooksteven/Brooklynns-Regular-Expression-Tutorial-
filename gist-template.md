@@ -52,17 +52,11 @@ This regex uses two different types of quantifiers. The first can be found in tw
 `([a-z0-9_\.-]+)`
 `([a-z\.]{2,6})`
 
-### Grouping Constructs
-
-### Bracket Expressions
-
 ### Character Classes
+/^([a-z0-9_\`.`-]+)@([`\d`a-z\`.`-]`+`)\.(`[a-z\`.`]`{2,6})$/  <br>
+In this Regex, the charactor class `/d` is used which in Javasctipt classifies the use of any digit from `0` to `9`.
 
-### The OR Operator
 
-### Flags
-
-### Character Escapes
 
 ## Author
 
