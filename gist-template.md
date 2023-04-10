@@ -73,6 +73,10 @@ Bracket Expression second: `[\da-z\.-]`   - includes all digits, case sensitive 
 
 Bracket Expression third: `[a-z\.]`      - includes case sensitive characters from a-z and periods.
 
+### Greedy and Lazy Match
+/^(`[a-z0-9_\.-]`+)@(`[\da-z\.-]`+)\.(`[a-z\.]`{2,6})$/  <br>
+Here, we have only used greedy quantifiers `+` and `{}`, meaning that it will allow the match to expand as long as it neess to go. If these quantifiers were non-greedy quantifiers, they would appear as `+?` or `{}?`, this will direct the system to make the shortest match.
+
 ## Author
 
 A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
